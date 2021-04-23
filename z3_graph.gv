@@ -1,0 +1,21 @@
+digraph "clusterz3_test.py" {
+	graph [label="z3_test.py"]
+	1 [label="def PV1(y):...
+"]
+	subgraph clusterPV1 {
+		graph [label=PV1]
+		3 [label="x = -50
+"]
+		4 [label="while x < 0:
+"]
+		5 [label="x = x + y
+y += 1
+"]
+		5 -> 4 [label=""]
+		4 -> 5 [label="x < 0"]
+		6 [label="assert y > 0
+"]
+		4 -> 6 [label="(x >= 0)"]
+		3 -> 4 [label=""]
+	}
+}
